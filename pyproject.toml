@@ -1,0 +1,10 @@
+[project]
+name = "mosaic"
+version = "1"
+dependencies = ["click", "Pillow"]
+
+[project.scripts]
+mosaic = "mosaic:run"
+
+[tool.poetry.dev-dependencies]
+black = "^22.10.0"
