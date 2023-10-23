@@ -83,7 +83,7 @@ def run(size, source, destination):
             new_y_size = int(photo["y"] * new_x_size / photo["x"])
 
             pic = Image.open(photo["full_path"])
-            pic = pic.resize((new_x_size, new_y_size), Image.ANTIALIAS)
+            pic = pic.resize((new_x_size, new_y_size), Image.LANCZOS)
 
             x = 0
             y = 0
@@ -111,7 +111,7 @@ def run(size, source, destination):
             new_y_size = int(photo["y"] * new_x_size / photo["x"])
 
             pic = Image.open(photo["full_path"])
-            pic = pic.resize((new_x_size, new_y_size), Image.ANTIALIAS)
+            pic = pic.resize((new_x_size, new_y_size), Image.LANCZOS)
 
             x = 0
             y = 0
