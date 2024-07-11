@@ -1,10 +1,20 @@
 [project]
 name = "mosaic"
-version = "1"
-dependencies = ["click", "Pillow"]
+version = "6"
+dependencies = ["click", "Pillow", "pillow-heif"]
+authors = [{name = "Matt Koskela", email = "mattkoskela@gmail.com"}]
 
 [project.scripts]
 mosaic = "mosaic:run"
 
+[tool.poetry]
+name = "mosaic"
+version = "6"
+description = "A simple CLI tool to create a mosaic image from a source image and a set of tiles."
+authors = ["Matt Koskela"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
 [tool.poetry.dev-dependencies]
-black = "^22.10.0"
+black = "^24.4.2"

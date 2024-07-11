@@ -36,6 +36,9 @@ def run(size, source, destination):
     click.echo("")
     click.echo(f"Size of the final images: {size}")
     click.echo(f"Source directory for photos: {source}")
+    click.echo(f"Destination directory for photos: {destination}")
+
+    # TODO: Create destination directory if it doesn't exist
 
     photos = utils.get_photos(source)
     click.echo(f"Found {len(photos)} photos")

@@ -1,14 +1,25 @@
 import os
 from PIL import Image
 from pathlib import Path
+from pillow_heif import register_heif_opener
+
+register_heif_opener()
 
 
 def get_photos(source):
     """Return a list of photos from the source directory."""
     photos = []
     for file in os.listdir(source):
-        if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith(".png"):
+        if (
+            file.endswith(".jpg")
+            or file.endswith(".jpeg")
+            or file.endswith(".png")
+            or file.endswith(".heic")
+        ):
             photos.append(os.path.join(source, file))
+        elif file.endswith(".mov"):
+            # TODO: Write a function to extract the first frame of the video
+            pass
 
     return photos
 
@@ -50,6 +61,9 @@ def separate_photos_into_prints(photos, number_of_photos_in_print):
             photos_in_print = []
 
         photos_in_print.append(photo)
+
+    if len(photos_in_print) > 0:
+        prints.append(photos_in_print)
 
     return prints
 
